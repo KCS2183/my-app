@@ -1,11 +1,29 @@
 import React from "react";
 import Comment from "./Comment";
 
+const comments = [
+    {
+        name: "김창식",
+        comment: "안녕하세요, 김창식입니다.",
+    },
+    {
+        name: "김방패식",
+        comment: "리액트 재미있어요~!",
+    },
+    {
+        name: "1위후보",
+        comment: "저도 리액트 배워보고 싶어요!!",
+    },
+]
+
 function CommentList(props){
     return(
         <div>
-            <Comment name={"김창식"} comment={"안녕하세요, 김창식입니다."}/>
-            <Comment name={"김방패식"} comment={"리액트 재미있어요~!"}/>
+            {comments.map((comment) => {
+                return (
+                    <Comment name={comment.name} comment={comment.comment}/>
+                );
+            })}
         </div>
     );
 }
